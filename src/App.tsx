@@ -7,6 +7,8 @@ import Profile from "./components/Profile"
 import Error from "./components/Error"
 import Login from "./components/Login"
 import Welcome from "./components/Welcome"
+import GenerateTest from "./components/GenerateTest"
+import AddPrcaticeQuestion from "./components/AddPrcaticeQuestion"
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
 <Route path="/login" element={<Login/>}   /> 
 <Route path="/home" element={<Home/>}   /> 
 <Route path="/quiz" element={<Quiz/>}   /> 
+<Route path="/generatetest" element={<GenerateTest/>}   /> 
+<Route path="/addpracticequestion" element={<AddPrcaticeQuestion/>}   /> 
 <Route path="createquiz" element={<CreateQuiz/>}   /> 
 <Route path="/profile" element={<Profile/>}   /> 
 <Route path="*" element={<Error/>}   /> 

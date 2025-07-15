@@ -1,7 +1,12 @@
+import axios from "axios";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { addUser } from "../utils/userSlice";
 
 export default function Login() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 const [logIn, setLogIn] = useState({
   email:"",
   password:""
@@ -9,9 +14,11 @@ const [logIn, setLogIn] = useState({
 const submitHandler = async(e:React.FormEvent<HTMLFormElement>)=>{
 e.preventDefault();
 console.log("login data:", logIn);
+const res = await axios.post("http://localhost:7777/login", logIn,{withCredentials:true} );
+console.log(res);
+dispatch(addUser(res.data));
+navigate("/home");
 }
-
-
   return (
 
     <div className="bg-gradient-to-bl from-red-500 to-blue-500 flex justify-center items-center min-h-screen">
