@@ -1,9 +1,11 @@
 import React from "react";
+import UserAuth from "./UserAuth";
 
 export default function AddQuestion() {
   return (
     <>
-      <div className="w-300" >
+    <UserAuth />
+      <div className="w-200" >
         <div className="flex flex-col"> 
           <label> Add question </label>
           <textarea  className="bg-white m-2" >  </textarea>

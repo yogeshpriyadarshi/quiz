@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AddQuestion from "./AddQuestion";
 import axios from "axios";
+import UserAuth from "./UserAuth";
 
 export default function AddPrcaticeQuestion() {
 
@@ -51,6 +52,7 @@ const [subject, setSubject] = useState<SubjectType | null>(null);
 
   return (
     <>
+    <UserAuth />
       <div className="bg-gradient-to-bl from-red-500 to-blue-500 flex flex-col justify-center items-center min-h-screen">
         <div className="w-1/2 h-1/2 ">
           <h1> Add Practice Question </h1>

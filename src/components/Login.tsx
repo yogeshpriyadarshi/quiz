@@ -7,22 +7,25 @@ import { addUser } from "../utils/userSlice";
 export default function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-const [logIn, setLogIn] = useState({
+  const [logIn, setLogIn] = useState({
   email:"",
   password:""
-});
+  }); 
+
 const submitHandler = async(e:React.FormEvent<HTMLFormElement>)=>{
-e.preventDefault();
+  try{
+    e.preventDefault();
 console.log("login data:", logIn);
-const res = await axios.post("http://localhost:7777/login", logIn,{withCredentials:true} );
-console.log(res);
-dispatch(addUser(res.data));
+const res = await axios.post("http://localhost:7777/login", logIn,{withCredentials:true});
+console.log("data after login",res?.data);
+dispatch(addUser(res?.data));
 navigate("/home");
+  }catch(err){
+    console.error(err);
+  }
 }
   return (
-
     <div className="bg-gradient-to-bl from-red-500 to-blue-500 flex justify-center items-center min-h-screen">
-
 <div className="flex flex-col w-1/3 h-auto border-2 bg-gradient-to-b from-red-500 to-blue-500 opacity-70 ">
 <div className="flex justify-center items-center m-5">
   <p className="text-4xl"> Log In  </p>
