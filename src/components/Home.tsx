@@ -17,7 +17,7 @@ export default function Home() {
     <div className="bg-gradient-to-bl from-red-500 to-blue-500 flex justify-center items-center min-h-screen" >
   <div  className=" h-1/4 w-1/4 cursor-pointer">
   <button className="cursor-pointer"
-   onClick={ ()=>{navigate("/addpracticequestion")}}
+   onClick={ ()=>{navigate("/addpracticeset")}}
   > Add Practice Question </button>
   </div>
 
